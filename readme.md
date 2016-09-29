@@ -1,6 +1,7 @@
 >**php mvc framework** 
 
 >"`dılo abinin yeri `" youtube kanalı tarafından yazılmıştır
+>fw henüz bitmemiş olup devam etmektedir
 >
 >[kanala git](https://www.youtube.com/user/isanbulx)
 
