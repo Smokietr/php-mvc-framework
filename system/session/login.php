@@ -6,6 +6,7 @@
  * Date: 30.9.2016
  * Time: 22:59
  */
+//login işlemleri
 trait login
 {
 
