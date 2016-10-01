@@ -8,7 +8,7 @@
  */
 trait logout
 {
-public function  logout(){
+public static function  logout(){
 
 
     session_start();
