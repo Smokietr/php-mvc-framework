@@ -10,7 +10,7 @@
 trait login
 {
 
-    public function login($userdata=false){
+    public static function login($userdata=false){
 
 session_start();
 
