@@ -11,9 +11,6 @@ Router::get("home/dert",function(){
 
 Router::get("/ders","ders@fizik");
 
-Router::get("deneme","deneme@bir");
-
-Router::get("aksam","aksam@sabah");
 
 
 
