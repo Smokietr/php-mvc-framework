@@ -11,4 +11,10 @@ class users
 {
 
     protected $table="users";
+    
+     public function data(){
+
+
+       return ["id"=>5,"user"=>"admin"];
+   }
 }
