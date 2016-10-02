@@ -19,10 +19,6 @@ public function __construct($url){
 self::$url=trim($url,"/");
 
 
-
-
-
-
     if(!function_exists('view')) {
 
         function view($param,$vars=false)
@@ -42,6 +38,35 @@ self::$url=trim($url,"/");
 
 //get start
 
+protected static  function mainRouter($url,$callback){
+
+    $kontrol = gettype($callback);
+    if ($kontrol == "object") {
+
+
+        call_user_func($callback);
+    } else {
+
+        $controlname = explode("@", $callback)[0];
+
+
+        $methodname = explode("@", $callback)[1];
+
+        if(class_exists($controlname)){
+            $b = new $controlname();
+        }
+
+        if(is_callable($b->$methodname())){
+
+            $b->$methodname();
+
+        }
+
+
+    }
+}
+
+
     public static function get($url,$callback){
 
 
@@ -50,31 +75,8 @@ self::$url=trim($url,"/");
 
 
             if (self::$url == trim($url, "/")) {
+                Router::mainRouter($url,$callback);
 
-                $kontrol = gettype($callback);
-                if ($kontrol == "object") {
-
-
-                    call_user_func($callback);
-                } else {
-
-                    $controlname = explode("@", $callback)[0];
-
-
-                    $methodname = explode("@", $callback)[1];
-
-                  if(class_exists($controlname)){
-                      $b = new $controlname();
-                  }
-
-                    if(is_callable($b->$methodname())){
-
-                        $b->$methodname();
-
-                    }
-
-
-                }
 
             }
 
@@ -94,32 +96,9 @@ public static function post($url,$callback){
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (self::$url == trim($url, "/")) {
 
-            $kontrol = gettype($callback);
-            if ($kontrol == "object") {
-
-
-                call_user_func($callback);
-            } else {
-
-                $controlname = explode("@", $callback)[0];
-
-
-                $methodname = explode("@", $callback)[1];
-
-                if(class_exists($controlname)){
-                    $b = new $controlname();
-                }
-
-                if(is_callable($b->$methodname())){
-
-                    $b->$methodname();
-
-                }
-
+                Router::mainRouter($url,$callback);
 
             }
-
-        }
 
     }
 }
@@ -133,32 +112,10 @@ public static function post($url,$callback){
 
             if (self::$url == trim($url, "/")) {
 
-                $kontrol = gettype($callback);
-                if ($kontrol == "object") {
-
-
-                    call_user_func($callback);
-                } else {
-
-                    $controlname = explode("@", $callback)[0];
-
-
-                    $methodname = explode("@", $callback)[1];
-
-                    if(class_exists($controlname)){
-                        $b = new $controlname();
-                    }
-
-                    if(is_callable($b->$methodname())){
-
-                        $b->$methodname();
-
-                    }
-
-
-                }
+                Router::mainRouter($url,$callback);
 
             }
+
 
         }
     }
@@ -173,32 +130,10 @@ public static function post($url,$callback){
 
             if (self::$url == trim($url, "/")) {
 
-                $kontrol = gettype($callback);
-                if ($kontrol == "object") {
-
-
-                    call_user_func($callback);
-                } else {
-
-                    $controlname = explode("@", $callback)[0];
-
-
-                    $methodname = explode("@", $callback)[1];
-
-                    if(class_exists($controlname)){
-                        $b = new $controlname();
-                    }
-
-                    if(is_callable($b->$methodname())){
-
-                        $b->$methodname();
-
-                    }
-
-
-                }
+                Router::mainRouter($url,$callback);
 
             }
+
 
         }
     }
@@ -214,28 +149,9 @@ public static function post($url,$callback){
 
         if (self::$url == trim($url, "/")) {
 
-            $kontrol = gettype($callback);
-            if ($kontrol == "object") {
+            if (self::$url == trim($url, "/")) {
 
-
-                call_user_func($callback);
-            } else {
-
-                $controlname = explode("@", $callback)[0];
-
-
-                $methodname = explode("@", $callback)[1];
-
-                if(class_exists($controlname)){
-                    $b = new $controlname();
-                }
-
-                if(is_callable($b->$methodname())){
-
-                    $b->$methodname();
-
-                }
-
+                Router::mainRouter($url,$callback);
 
             }
 
@@ -244,5 +160,13 @@ public static function post($url,$callback){
         }
 
 //any end
+
+
+function __destruct()
+{
+
+
+
+}
 }
 
