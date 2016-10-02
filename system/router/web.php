@@ -17,7 +17,7 @@ Router::post("as",function (){
     print_r($_POST);
 });
 
-Router::get("as",function(){
+Router::get("",function(){
     echo '<form method="post" action="as">
          <input type="text" name="ad"/>
           <input type="submit" value="gonder">

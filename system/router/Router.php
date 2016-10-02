@@ -62,8 +62,17 @@ self::$url=trim($url,"/");
 
 
                     $methodname = explode("@", $callback)[1];
-                    $b = new $controlname();
-                    $b->$methodname();
+
+                  if(class_exists($controlname)){
+                      $b = new $controlname();
+                  }
+
+                    if(is_callable($b->$methodname())){
+
+                        $b->$methodname();
+
+                    }
+
 
                 }
 
@@ -83,7 +92,6 @@ self::$url=trim($url,"/");
 public static function post($url,$callback){
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
         if (self::$url == trim($url, "/")) {
 
             $kontrol = gettype($callback);
@@ -97,8 +105,17 @@ public static function post($url,$callback){
 
 
                 $methodname = explode("@", $callback)[1];
-                $b = new $controlname();
-                $b->$methodname();
+
+                if(class_exists($controlname)){
+                    $b = new $controlname();
+                }
+
+                if(is_callable($b->$methodname())){
+
+                    $b->$methodname();
+
+                }
+
 
             }
 
@@ -127,8 +144,17 @@ public static function post($url,$callback){
 
 
                     $methodname = explode("@", $callback)[1];
-                    $b = new $controlname();
-                    $b->$methodname();
+
+                    if(class_exists($controlname)){
+                        $b = new $controlname();
+                    }
+
+                    if(is_callable($b->$methodname())){
+
+                        $b->$methodname();
+
+                    }
+
 
                 }
 
@@ -158,8 +184,17 @@ public static function post($url,$callback){
 
 
                     $methodname = explode("@", $callback)[1];
-                    $b = new $controlname();
-                    $b->$methodname();
+
+                    if(class_exists($controlname)){
+                        $b = new $controlname();
+                    }
+
+                    if(is_callable($b->$methodname())){
+
+                        $b->$methodname();
+
+                    }
+
 
                 }
 
@@ -177,25 +212,34 @@ public static function post($url,$callback){
 
 
 
-            if (self::$url == trim($url, "/")) {
+        if (self::$url == trim($url, "/")) {
 
-                $kontrol = gettype($callback);
-                if ($kontrol == "object") {
-
-
-                    call_user_func($callback);
-                } else {
-
-                    $controlname = explode("@", $callback)[0];
+            $kontrol = gettype($callback);
+            if ($kontrol == "object") {
 
 
-                    $methodname = explode("@", $callback)[1];
+                call_user_func($callback);
+            } else {
+
+                $controlname = explode("@", $callback)[0];
+
+
+                $methodname = explode("@", $callback)[1];
+
+                if(class_exists($controlname)){
                     $b = new $controlname();
+                }
+
+                if(is_callable($b->$methodname())){
+
                     $b->$methodname();
 
                 }
 
+
             }
+
+        }
 
         }
 
