@@ -40,36 +40,165 @@ self::$url=trim($url,"/");
 
 }
 
-
+//get start
 
     public static function get($url,$callback){
 
 
 
-    if (self::$url == trim($url, "/")) {
-
-        $kontrol = gettype($callback);
-        if ($kontrol == "object") {
+        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
 
-            call_user_func($callback);
-        } else {
+            if (self::$url == trim($url, "/")) {
 
-            $controlname = explode("@", $callback)[0];
+                $kontrol = gettype($callback);
+                if ($kontrol == "object") {
 
 
-            $methodname = explode("@", $callback)[1];
-            $b = new $controlname();
-            $b->$methodname();
+                    call_user_func($callback);
+                } else {
+
+                    $controlname = explode("@", $callback)[0];
+
+
+                    $methodname = explode("@", $callback)[1];
+                    $b = new $controlname();
+                    $b->$methodname();
+
+                }
+
+            }
+
+        }
+
+}
+
+//get end
+
+
+
+//post start
+
+
+public static function post($url,$callback){
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+        if (self::$url == trim($url, "/")) {
+
+            $kontrol = gettype($callback);
+            if ($kontrol == "object") {
+
+
+                call_user_func($callback);
+            } else {
+
+                $controlname = explode("@", $callback)[0];
+
+
+                $methodname = explode("@", $callback)[1];
+                $b = new $controlname();
+                $b->$methodname();
+
+            }
 
         }
 
     }
-
-
 }
 
+//post end
+
+//put start
+    public static function put($url,$callback){
+
+        if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
+
+            if (self::$url == trim($url, "/")) {
+
+                $kontrol = gettype($callback);
+                if ($kontrol == "object") {
 
 
+                    call_user_func($callback);
+                } else {
+
+                    $controlname = explode("@", $callback)[0];
+
+
+                    $methodname = explode("@", $callback)[1];
+                    $b = new $controlname();
+                    $b->$methodname();
+
+                }
+
+            }
+
+        }
+    }
+
+//put end
+
+//delete start
+
+    public static function delete($url,$callback){
+
+        if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
+
+            if (self::$url == trim($url, "/")) {
+
+                $kontrol = gettype($callback);
+                if ($kontrol == "object") {
+
+
+                    call_user_func($callback);
+                } else {
+
+                    $controlname = explode("@", $callback)[0];
+
+
+                    $methodname = explode("@", $callback)[1];
+                    $b = new $controlname();
+                    $b->$methodname();
+
+                }
+
+            }
+
+        }
+    }
+
+//delete end
+
+
+//any start
+
+    public static function any($url,$callback){
+
+
+
+            if (self::$url == trim($url, "/")) {
+
+                $kontrol = gettype($callback);
+                if ($kontrol == "object") {
+
+
+                    call_user_func($callback);
+                } else {
+
+                    $controlname = explode("@", $callback)[0];
+
+
+                    $methodname = explode("@", $callback)[1];
+                    $b = new $controlname();
+                    $b->$methodname();
+
+                }
+
+            }
+
+        }
+
+//any end
 }
 
