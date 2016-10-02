@@ -7,10 +7,11 @@
  * Time: 22:59
  */
 //login işlemleri
+echo "loginnnnnnn";
 trait login
 {
 
-    public function login($userdata=false){
+    public static function login($userdata=false){
 
 session_start();
 

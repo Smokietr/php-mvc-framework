@@ -19,7 +19,8 @@ public function __construct($url){
 self::$url=trim($url,"/");
 
 
-    //
+
+
 
 
     if(!function_exists('view')) {
@@ -45,29 +46,30 @@ self::$url=trim($url,"/");
 
 
 
-     if(self::$url==trim($url,"/")){
+    if (self::$url == trim($url, "/")) {
 
-         $kontrol=gettype($callback);
-         if($kontrol=="object"){
-
-
-             call_user_func($callback);
-         }
-         else
-         {
-
-             $controlname=explode("@",$callback)[0];
+        $kontrol = gettype($callback);
+        if ($kontrol == "object") {
 
 
-             $methodname=explode("@",$callback)[1];
-           $b=new $controlname();
-          $b->$methodname();
+            call_user_func($callback);
+        } else {
 
-         }
+            $controlname = explode("@", $callback)[0];
 
-     }
+
+            $methodname = explode("@", $callback)[1];
+            $b = new $controlname();
+            $b->$methodname();
+
+        }
+
+    }
 
 
 }
+
+
+
 }
 

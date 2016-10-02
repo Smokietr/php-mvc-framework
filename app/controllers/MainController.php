@@ -9,6 +9,9 @@
 
 include_once "system/engine/engine.php";
 
+
+
+
 class MainController
 {
 
@@ -29,6 +32,15 @@ class MainController
 
 
             }
+        }
+
+
+
+        function redirect($redirectUrl){
+
+            return header("location:$redirectUrl");
+
+
         }
 
 

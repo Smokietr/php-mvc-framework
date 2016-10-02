@@ -20,4 +20,14 @@ class chainingDb extends connect
 
     }
 
+
+    public function find($id){
+
+
+
+    }
+
+
+
+
 }
