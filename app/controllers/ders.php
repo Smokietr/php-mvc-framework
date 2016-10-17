@@ -14,7 +14,7 @@ class ders extends MainController
 
     public function fizik(){
 
-        $array=[1,45,7];
+        $array=(new users())->find(3);
         $deger=123466;
         $ad="dılo abinin yeri";
 

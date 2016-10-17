@@ -8,11 +8,15 @@
     <title>Document</title>
 </head>
 <body>
-<?php
-print_r($array);
+örnek view sayfası
+<br>
+<pre>
+
+    <?php
+
+    print_r($array);
 ?>
-{{deger}}
-{{deger}}
+</pre>
 
 </body>
 </html>

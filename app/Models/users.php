@@ -7,14 +7,12 @@
  * Time: 21:52
  */
 
+include_once "system/database/craud.php";
 class users
 {
 
-    protected $table="users";
+    use craud;
+    protected $table="urunler";
     
-     public function data(){
 
-
-       return ["id"=>5,"user"=>"admin"];
-   }
 }
