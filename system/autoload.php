@@ -9,6 +9,8 @@
 
 
  */
-set_include_path("app/controllers".PATH_SEPARATOR."app/Models");
+//
+
+set_include_path("app/controllers".PATH_SEPARATOR."app/Models".PATH_SEPARATOR."system/database");
 spl_autoload_register();
 
