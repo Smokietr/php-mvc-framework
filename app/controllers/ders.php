@@ -14,7 +14,16 @@ class ders extends MainController
 
     public function fizik(){
 
-        $array=(new users())->find(3);
+        $array=(new users())->where("id=13")->delete(); //delete
+
+        /*
+         (new users())->get(); hesini çeker
+        (new users())->where("id=2")->get();  id si 2 olan data
+        (new users())->find(2);    id 2 olan data otomatik id atanmıştır
+        (new users())->delete(); tüm dataları siler
+        (new users())->where("id=2")->delete();  id 2olanı siler
+         */
+
         $deger=123466;
         $ad="dılo abinin yeri";
 
