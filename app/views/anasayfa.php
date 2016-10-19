@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-örnek view sayfası
+<h1>örnek view sayfası</h1>
 <br>
 <pre>
 
