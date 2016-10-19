@@ -128,7 +128,7 @@ return $this->connect->exec("delete  from ".$this->table.$this->where);
         },$key);
 
       $a=$this->connect->prepare("INSERT INTO $this->table ( ". implode(',' , $key) .") VALUES ('".     implode("','" ,$keyspdo) ."')");
-return $a->execute(array_combine($key,$value));
+return $a->execute($insert);
 
     }
 }
