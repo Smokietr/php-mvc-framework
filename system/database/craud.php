@@ -111,21 +111,24 @@ return $this->connect->exec("delete  from ".$this->table.$this->where);
 
 
 
+
+
     public function add(array $insert){
 
 
-     $this->query="insert into set ".$this->table;
+        $key = array_keys($insert);
 
-        foreach($insert as $key=>$val){
+        $value = array_values($insert);
+        $keyspdo=array_map(function($array){
 
 
 
-            $this->query.=" $key=$val ";
-        }
+               return ":".$array;
 
-return $this->connect->exec($this->query);
+        },$key);
+
+      $a=$this->connect->prepare("INSERT INTO $this->table ( ". implode(',' , $key) .") VALUES ('".     implode("','" ,$keyspdo) ."')");
+return $a->execute(array_combine($value,$value));
 
     }
-
-
 }
