@@ -14,7 +14,7 @@ class ders extends MainController
 
     public function fizik(){
 
-        $array=(new users())->join("users")->get();//update
+        $array=(new users())->add(["type"=>"ddd","prica"=>122]);
 
         /*
          (new users())->get(); hesini çeker

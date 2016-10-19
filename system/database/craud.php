@@ -22,6 +22,7 @@ private $result;
     protected $connect;
     private $array;
     private $col;
+    private $query;
 
     function __construct(){
 
@@ -110,12 +111,19 @@ return $this->connect->exec("delete  from ".$this->table.$this->where);
 
 
 
-    public function insert($insert){
+    public function add(array $insert){
 
 
-     //insert işelmleri yapılacak
+     $this->query="insert into set ".$this->table;
+
+        foreach($insert as $key=>$val){
 
 
+
+            $this->query.=" $key=$val ";
+        }
+
+return $this->connect->exec($this->query);
 
     }
 
