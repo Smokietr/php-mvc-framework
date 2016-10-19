@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/sepet.iml" filepath="$PROJECT_DIR$/.idea/sepet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/php-mvc-framework.iml" filepath="$PROJECT_DIR$/.idea/php-mvc-framework.iml" />
     </modules>
   </component>
 </project>
