@@ -78,9 +78,6 @@ private $result;
 
 
 
-
-
-
     public function delete(){
 
 return $this->connect->exec("delete  from ".$this->table.$this->where);
@@ -96,6 +93,17 @@ return $this->connect->exec("delete  from ".$this->table.$this->where);
 
 
         return $this->connect->exec("update ".$this->table." set ".$update.$this->where);
+
+
+
+    }
+
+
+
+    public function insert($insert){
+
+
+     //insert işelmleri yapılacak
 
 
 
