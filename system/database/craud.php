@@ -95,7 +95,7 @@ return $this->connect->exec("delete  from ".$this->table.$this->where);
     public function update($update=false){
 
 
-        return $this->exec("update ".$this->table." set ".$update.$this->where);
+        return $this->connect->exec("update ".$this->table." set ".$update.$this->where);
 
 
 
