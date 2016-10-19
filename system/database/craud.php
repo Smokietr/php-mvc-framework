@@ -18,6 +18,7 @@ private $result;
     private $user="root";
     private $password="";
     private $where;
+    private $join;
     protected $connect;
     private $array;
     private $col;
@@ -47,7 +48,16 @@ private $result;
 
     }
 
+public function join($join=false){
 
+
+$this->join=" ,$join ";
+
+    return $this;
+
+
+
+}
 
     public function where($where){
 
@@ -60,7 +70,7 @@ private $result;
 
     public function get(){
 
-        $this->result=$this->connect->query("select * from ".$this->table.$this->where);
+        $this->result=$this->connect->query("select * from ".$this->table.$this->join.$this->where);
 
        while($a=$this->result->fetch(PDO::FETCH_ASSOC)){
 
