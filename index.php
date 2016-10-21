@@ -7,6 +7,8 @@ try {
 
     new Router(@$_GET["url"]);
     include_once "system/router/web.php";
+    Router::submit();
+
 
 }
 

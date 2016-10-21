@@ -15,7 +15,7 @@
 
         <div class="panel panel-primary">
             <div class="panel-heading"><h1>php mvc mini framework v1.0.0</h1></div>
-            <div class="panel-body">developer by dılo sürücü
+            <div class="panel-body">developer by <a target="_blank" href="http://www.youtube.com/user/isanbulx">dılo abinin yeri</a>
                 <h2>mvc app folders</h2>
                 <ul class="list-group">
                     <li class="list-group-item list-group-item-success">controllers app/controllers</li>

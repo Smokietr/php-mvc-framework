@@ -14,6 +14,9 @@ include_once "system/autoload.php";
 
 class Router
 {
+
+    private static $sayi=0;
+
 protected static $url;
 public function __construct($url){
 self::$url=trim($url,"/");
@@ -39,7 +42,7 @@ self::$url=trim($url,"/");
 //get start
 
 protected static  function mainRouter($url,$callback){
-
+    self::$sayi++;
     $kontrol = gettype($callback);
     if ($kontrol == "object") {
 
@@ -75,6 +78,7 @@ protected static  function mainRouter($url,$callback){
 
 
             if (self::$url == trim($url, "/")) {
+
                 Router::mainRouter($url,$callback);
 
 
@@ -161,6 +165,15 @@ public static function post($url,$callback){
 
 //any end
 
+
+public static function submit(){
+
+  if(self::$sayi==0){
+
+     return view("404");
+  }
+
+}
 
 function __destruct()
 {
