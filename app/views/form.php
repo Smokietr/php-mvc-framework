@@ -10,14 +10,18 @@
 </head>
 <body>
 <div class="container">
-<h1>örnek view sayfası</h1>
-<br>
-<pre>
 
-    <?php
-    print_r($array);
-?>
-</pre>
+
+<div class="row">
+
+    <div class="col-sm-4">
+<form class="form-horizantal" method="post" action="as">
+            <input placeholder="ad" class="form-control" type="text" name="ad"/>
+            <input placeholder="soyad" class="form-control" type="text" name="soyad"/>
+            <input class="btn btn-info" type="submit" value="gonder">
+
+</div>
+</div>
 </div>
 </body>
 </html>

@@ -18,11 +18,7 @@ Router::post("as",function (){
 });
 
 Router::get("/",function(){
-    echo '<form method="post" action="as">
-         <input type="text" name="ad"/>
-          <input type="submit" value="gonder">
-
-';
+    return view("welcome");
 });
 
 
