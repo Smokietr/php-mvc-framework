@@ -50,7 +50,7 @@ class MainController
 
     function __call($method,$par){
 
-        echo $method."class not found";
+        echo $method." class not found";
     }
 
 
