@@ -38,7 +38,7 @@ private $result;
 
     public function find($id){
 
-        $this->result=$this->connect->prepare("select * from ".$this->table." where id=:id");
+        $this->result=$this->connect->prepare("select * from ".$this->table." where id=:id ");
         $this->result->bindParam("id",$id);
         $this->result->execute();
         $this->result=$this->result->fetch(\PDO::FETCH_ASSOC);
