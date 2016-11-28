@@ -15,7 +15,7 @@
 <div class="row">
 
     <div class="col-sm-4">
-<form class="form-horizantal" method="post" action="as">
+<form class="control-panel" class="form-horizantal" method="post" action="as">
             <input placeholder="ad" class="form-control" type="text" name="ad"/>
             <input placeholder="soyad" class="form-control" type="text" name="soyad"/>
             <input class="btn btn-info" type="submit" value="gonder">

@@ -36,6 +36,10 @@ self::$url=trim($url,"/");
 
         }
 
+        function  say($a){
+
+            echo    "hello ".$a;
+        }
 
 }
 
@@ -105,6 +109,7 @@ public static function post($url,$callback){
             }
 
     }
+
 }
 
 //post end

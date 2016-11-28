@@ -17,7 +17,6 @@ class MainController
 
     public function __construct(){
 
-
         if(!function_exists('view')) {
 
             function view($param,$vars=false)
@@ -27,7 +26,6 @@ class MainController
            include_once "app/views/$param.php";
 
 
-//engine::template($param,$vars);
 
 
 

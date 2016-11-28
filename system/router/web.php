@@ -1,10 +1,9 @@
 <?php
 
 
-Router::get("home/dert",function(){
+Router::get("form/:id",function(){
 
-    $rakam=123456;
-    return view("derbi",compact("rakam"));
+   return view("form");
 });
 
 
@@ -18,8 +17,15 @@ Router::post("as",function (){
 });
 
 Router::get("/",function(){
+
+
+
     return view("welcome");
 });
+
+
+Router::get("/c","bb@aa");
+
 
 
 

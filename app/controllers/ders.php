@@ -14,7 +14,10 @@ class ders extends MainController
 
     public function fizik(){
 
-        $array=(new users())->find(1);
+        $array=(new users())->where("id=3")->get();
+
+
+$ses=(new session)->set(["ad"=>"dılo abinin yeri"]);
 
         /*
          (new users())->get(); hesini çeker
@@ -24,12 +27,15 @@ class ders extends MainController
         (new users())->where("id=2")->delete();  id 2olanı siler
          */
 
+       
+         
+$deneme=63+12;
         $deger=123466;
         $ad="dılo abinin yeri";
+$data=(new uyeler())->get();
+    return view("anasayfa",compact("deger","ad","array","deneme","data","ses"));
 
 
-
-return view("anasayfa",compact("array","deger","ad"));
     }
 
 

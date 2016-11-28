@@ -1,20 +1,25 @@
 <?php
 
 class engine{
-private static $file;
-    public static function template($file,$vars=false){
 
 
-        self::$file=file_get_contents("app/views/$file.php");
+    private $file;
+        private $ben;
+        private $myarray;
+        public function template($file,$vars=false){
+    $this->myarray=$vars;
 
-        extract($vars);
+           $this->file=file_get_contents("app/views/$file.php");
 
-function doTemplate($match){
 
-return  $GLOBALS[$match[1]];
 
-}
-     echo preg_replace_callback("#{{(.*)}}#isU",'doTemplate',self::$file);
-    }
+
+            extract($this->myarray);
+
+      print_r(preg_replace_callback("#{{(.*)}}#isU",function($a){
+
+     return gettype($this->myarray);
+       },$this->file));
+        }
 
 }
