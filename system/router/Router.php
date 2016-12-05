@@ -18,6 +18,7 @@ class Router
     private static $sayi=0;
 
 protected static $url;
+public static $dynUrl=[];
 public function __construct($url){
 self::$url=trim($url,"/");
 
@@ -78,17 +79,34 @@ protected static  function mainRouter($url,$callback){
 
 
 
-        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+       if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
 
-            if (self::$url == trim($url, "/")) {
-
-                Router::mainRouter($url,$callback);
+                if(count(array_filter(explode("/",self::$url))==count(array_filter(explode("/",$url))))) {
 
 
-            }
+     if(explode("/",trim(self::$url,"/"))[0]==explode("/",trim($url,"/"))[0]){
+
+      self::$dynUrl=explode("/",self::$url);
+
+
+         Router::mainRouter($url, $callback);
+
+     }
+
+
+
+
+
+
+
+
+      }
 
         }
+
+
+
 
 }
 
@@ -102,12 +120,26 @@ protected static  function mainRouter($url,$callback){
 public static function post($url,$callback){
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        if (self::$url == trim($url, "/")) {
+        if(count(array_filter(explode("/",self::$url))==count(array_filter(explode("/",$url))))) {
 
-                Router::mainRouter($url,$callback);
+
+            if(explode("/",trim(self::$url,"/"))[0]==explode("/",trim($url,"/"))[0]){
+
+                self::$dynUrl=explode("/",self::$url);
+
+
+                Router::mainRouter($url, $callback);
 
             }
 
+
+
+
+
+
+
+
+        }
     }
 
 }
@@ -119,12 +151,26 @@ public static function post($url,$callback){
 
         if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
 
-            if (self::$url == trim($url, "/")) {
+            if(count(array_filter(explode("/",self::$url))==count(array_filter(explode("/",$url))))) {
 
-                Router::mainRouter($url,$callback);
+
+                if(explode("/",trim(self::$url,"/"))[0]==explode("/",trim($url,"/"))[0]){
+
+                    self::$dynUrl=explode("/",self::$url);
+
+
+                    Router::mainRouter($url, $callback);
+
+                }
+
+
+
+
+
+
+
 
             }
-
 
         }
     }
@@ -137,12 +183,26 @@ public static function post($url,$callback){
 
         if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
 
-            if (self::$url == trim($url, "/")) {
+            if(count(array_filter(explode("/",self::$url))==count(array_filter(explode("/",$url))))) {
 
-                Router::mainRouter($url,$callback);
+
+                if(explode("/",trim(self::$url,"/"))[0]==explode("/",trim($url,"/"))[0]){
+
+                    self::$dynUrl=explode("/",self::$url);
+
+
+                    Router::mainRouter($url, $callback);
+
+                }
+
+
+
+
+
+
+
 
             }
-
 
         }
     }
@@ -156,13 +216,24 @@ public static function post($url,$callback){
 
 
 
-        if (self::$url == trim($url, "/")) {
+        if(count(array_filter(explode("/",self::$url))==count(array_filter(explode("/",$url))))) {
 
-            if (self::$url == trim($url, "/")) {
 
-                Router::mainRouter($url,$callback);
+            if(explode("/",trim(self::$url,"/"))[0]==explode("/",trim($url,"/"))[0]){
+
+                self::$dynUrl=explode("/",self::$url);
+
+
+                Router::mainRouter($url, $callback);
 
             }
+
+
+
+
+
+
+
 
         }
 
