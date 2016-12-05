@@ -27,7 +27,7 @@ $ses=(new session)->set(["ad"=>"dılo abinin yeri"]);
         (new users())->where("id=2")->delete();  id 2olanı siler
          */
 
-       
+       $ikinciparam=$this->getUrl[1];  //urlde ki 2. parametreyi alır 
          
 $deneme=63+12;
         $deger=123466;
