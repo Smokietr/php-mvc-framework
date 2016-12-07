@@ -8,11 +8,12 @@ class session{
     function __construct(){
      
  
-     if(session_status()!=2){
+     if(PHP_SESSION_ACTIVE == session_status () ){
 
      	@session_start();
      }
 
+      
     
     
     }
