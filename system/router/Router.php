@@ -16,7 +16,8 @@ class Router
 {
 
     private static $sayi=0;
-
+private static $explode;
+    private static $joker;
 protected static $url;
 public static $dynUrl=[];
 public function __construct($url){
