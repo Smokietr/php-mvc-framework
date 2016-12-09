@@ -1,7 +1,7 @@
 <?php
 
 
-Router::get("form/:id",function(){
+Router::get("/form/*",function(){
 
    return view("form");
 });
