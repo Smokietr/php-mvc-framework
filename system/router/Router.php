@@ -128,30 +128,47 @@ self::$dynUrl=explode("/",self::$url);
 
 public static function post($url,$callback){
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        if(count(array_filter(explode("/",self::$url))==count(array_filter(explode("/",$url))))) {
 
 
-            if(explode("/",trim(self::$url,"/"))[0]==explode("/",trim($url,"/"))[0]){
+       if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+$url=ltrim($url,"/");
 
-                self::$dynUrl=explode("/",self::$url);
+       
+if(array_filter(explode("/",self::$url)) == array_filter(explode("/",$url))){
 
+ 
 
-                Router::mainRouter($url, $callback);
-
-            }
-
-
-
+      self::$dynUrl=explode("/",self::$url);
 
 
+         Router::mainRouter($url, $callback);
+
+   }
+      else
+      
+       {
+
+self::$explode=explode("/",$url);
+self::$joker=end(self::$explode);
+if(self::$joker == "*" && explode("/",$url)[0]==explode("/",self::$url)[0]){
+self::$dynUrl=explode("/",self::$url);
 
 
+         Router::mainRouter($url, $callback);
+}
+
+
+
+      }
 
         }
-    }
+
+
+
 
 }
+
+
 
 //post end
 
