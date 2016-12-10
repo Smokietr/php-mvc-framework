@@ -12,7 +12,7 @@
 trait craud
 {
 
-private $result;
+private $result,$columnString,$valueString,$STH ;
     private $host="localhost";
     private $dbname="deneme";
     private $user="root";
@@ -116,19 +116,13 @@ return $this->connect->exec("delete  from ".$this->table.$this->where);
     public function add(array $insert){
 
 
-        $key = array_keys($insert);
+        $this->columnString = implode(',', array_keys($insert));
+        $this->valueString = implode(',', array_fill(0, count($insert), '?'));
 
-        $value = array_values($insert);
-        $keyspdo=array_map(function($array){
+        $this->STH = $this->connect->prepare("INSERT INTO ".$this->table." ($this->columnString) VALUES ($this->valueString)");
+       return  $this->STH->execute(array_values($insert));
 
 
-
-               return ":".$array;
-
-        },$key);
-
-      $a=$this->connect->prepare("INSERT INTO $this->table ( ". implode(',' , $key) .") VALUES ('".     implode("','" ,$keyspdo) ."')");
-return $a->execute($insert);
 
     }
 }
