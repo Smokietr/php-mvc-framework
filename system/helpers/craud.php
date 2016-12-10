@@ -17,12 +17,9 @@ private $result,$columnString,$valueString,$STH ;
     private $dbname="deneme";
     private $user="root";
     private $password="";
-    private $where;
-    private $join;
+    private $where,$join,$array,$col,$query;
     protected $connect;
-    private $array;
-    private $col;
-    private $query;
+ 
 
     function __construct(){
 
