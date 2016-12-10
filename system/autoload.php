@@ -11,6 +11,6 @@
  */
 //
 
-set_include_path("app/controllers".PATH_SEPARATOR."app/Models".PATH_SEPARATOR."system/helpers".PATH_SEPARATOR."system/engine");
+set_include_path("app/controllers".PATH_SEPARATOR."app/Models".PATH_SEPARATOR."system/helpers/general".PATH_SEPARATOR."system/engine");
 spl_autoload_register();
 
