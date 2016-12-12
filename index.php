@@ -3,6 +3,7 @@
 
 try {
 
+include_once "system/error/settings.php";
     include_once "system/router/Router.php";
 
     new Router(@$_GET["url"]);
