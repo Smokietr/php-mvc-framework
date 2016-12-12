@@ -321,8 +321,9 @@ self::$dynUrl=explode("/",self::$url);
 public static function submit(){
 
   if(self::$sayi==0){
-
-     return view("404");
+global $page_404;
+      return view($page_404);
+    // return view("404");
   }
 
 }
