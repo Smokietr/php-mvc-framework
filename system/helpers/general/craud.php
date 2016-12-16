@@ -42,10 +42,10 @@ private $result,$columnString,$valueString,$STH ;
 
     }
 
-public function join($join=false){
+public function join(array $join){
 
 
-$this->join=" ,$join ";
+$this->join=implode(",",$join);
 
     return $this;
 
