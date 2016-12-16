@@ -14,7 +14,7 @@ trait craud
 
 private $result,$columnString,$valueString,$STH ;
 
-    private $conf,$where,$join,$connect,$array,$col,$query,$b;
+    private $conf,$where,$join,$connect,$array,$col,$query,$b,$bwhere;
 
     function __construct(){
 
@@ -55,7 +55,17 @@ $this->join=implode(",",$join);
 
     public function where($where){
 
-     $this->where=" where $where";
+     foreach($where as $item=>$value){
+
+
+            $this->bwhere.=$item."=".$value." and ";
+        }
+
+    $this->bwhere=substr($this->bwhere,0,-5);
+
+        $this->where=" where $this->bwhere";
+
+
 
         return $this;
     }
