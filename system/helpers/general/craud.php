@@ -14,13 +14,7 @@ trait craud
 
 private $result,$columnString,$valueString,$STH ;
 
-    private $conf;
-    private $where;
-    private $join;
-    protected $connect;
-    private $array;
-    private $col;
-    private $query;
+    private $conf,$where,$join,$connect,$array,$col,$query,$b,$d;
 
     function __construct(){
 
@@ -99,10 +93,22 @@ return $this->connect->exec("delete  from ".$this->table.$this->where);
 
 
 
-    public function update($update=false){
+    public function update(array $updt){
+
+        
+           $this->d=$updt;
+        implode(",",$this->d);
+        foreach($this->d as $item=>$value){
 
 
-        return $this->connect->exec("update ".$this->table." set ".$update.$this->where);
+            $this->b.=$item."=".$value.",";
+        }
+        $this->b=substr($this->b,0,-1);
+
+        return $this->connect->exec("update ".$this->table." set ".$this->b.$this->where);
+
+
+      //  return $this->connect->exec("update ".$this->table." set ".$update.$this->where); eskisi 
 
 
 
