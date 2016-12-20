@@ -6,47 +6,63 @@
  * Date: 20.12.2016
  * Time: 08:45
  */
+
+session_start();
 class cartClass
 {
 
-
-    private $cartArray=array(),$serialize,$unserialize;
-
-
-    public function add($product){
-        if(!isset($_COOKIE["cart_addToCart"])){
+    private $data,$mysqlin;
+    function __construct()
+    {
 
 
-           setCookie("cart_addToCart",serialize([]),time()+3600);
+
+        if(empty($_SESSION["cart"])){
+
+            $_SESSION["cart"]=array();
         }
 
-
-$this->cartArray=unserialize($_COOKIE["cart_addToCart"]);
-        if(in_array($product,$this->cartArray)){
-
-
-         return  false;
-        }
-array_push($this->cartArray,$product);
-
-        return   setCookie("cart_addToCart",serialize($this->cartArray),time()+3600);
-
-
-
-    }
-
-
-    public  function get($getProduct=false){
-
-return  unserialize($_COOKIE["cart_addToCart"]);
     }
 
 
 
 
-    public function makeEmpty(){
+    public function add($prductid){
 
-setcookie("cart_addToCart",serialize([1]),time()-3660);
+
+
+   $this->data=$_SESSION["cart"];
+   $this->data[$prductid]=$prductid;
+   $this->mysqlin=$this->data;
+return $_SESSION["cart"]=$this->data;
+    }
+
+
+public  function get(){
+
+
+    return array_keys($_SESSION["cart"]);
+}
+
+
+public function getOut($getOutid){
+
+
+
+   unset($_SESSION["cart"][$getOutid]);
+
+}
+
+public function inMysql(){
+
+
+    return implode(",",array_keys($_SESSION["cart"]));
+}
+
+    public function fullEmpty(){
+
+
+unset($_SESSION["cart"]);
 
     }
 
