@@ -10,7 +10,7 @@
 /*
  hata ayarları-error settings
  */
-$page_404="404";
+$page_404="404.view";
 /*
   404 sayfasının adı .uzantısı php olmalı
  404 name of page.extension must is php of 404 page
