@@ -1,7 +1,7 @@
 >**php mvc framework** 
 
 >"`dılo abinin yeri `" youtube kanalı tarafından yazılmıştır
->model view controller php mini framework
+>model view controller php mini framework v 1.0
 >
 >[kanala git](https://www.youtube.com/user/isanbulx)
 
