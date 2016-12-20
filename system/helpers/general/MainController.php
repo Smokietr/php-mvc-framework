@@ -25,7 +25,7 @@ class MainController
             {
                 restore_include_path();
                 extract($vars);
-           include_once "app/views/$param.php";
+           include_once "app/views/$param.view.php";
 
 
 
