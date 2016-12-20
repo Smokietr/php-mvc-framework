@@ -30,7 +30,7 @@ self::$url=trim($url,"/");
         {
             restore_include_path();
             $vars ?  extract($vars) :'';
-            include_once "app/views/$param.php";
+            include_once "app/views/$param.view.php";
 
 
         }
