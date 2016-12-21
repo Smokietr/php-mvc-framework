@@ -6,15 +6,15 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>not found 404</title>
 </head>
 <body>
 <div class="container">
 
-    <pre>
+  <div class="col-sm-12">
 
-        <h1>404 not found</h1>
-    </pre>
+      <img style="width:100%" class="img-responsive" src="/projem/public/img/image_404.png" alt="">
+  </div>
 
 </div>
 </body>
