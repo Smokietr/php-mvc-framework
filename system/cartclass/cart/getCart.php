@@ -39,19 +39,18 @@ public function fetchProducts($tablename)
 {
 
     $this->in=(new cartClass())->inMysql();
+    if(!empty($this->in)){
+        $this->query=$this->connect->query("SELECT * FROM $tablename  where id IN (".$this->in.")  ");
+        while($row=$this->query->fetch(PDO::FETCH_ASSOC)){
+
+            $this->data[]=$row;
 
 
-$this->query=$this->connect->query("SELECT * FROM $tablename  where id IN (".$this->in.")  ");
-while($row=$this->query->fetch(PDO::FETCH_ASSOC)){
-
-    $this->data[]=$row;
 
 
-
-
-}
-    return $this->data;
-
+        }
+        return $this->data;
+    }
 
 
 
