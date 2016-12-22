@@ -8,7 +8,7 @@ Router::get("/form/*",function(){
 
 
 
-Router::get("/ders","ders@fizik");
+Router::get("/ders/*","ders@fizik");
 
 Router::post("as",function (){
 
