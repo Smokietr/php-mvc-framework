@@ -12,7 +12,7 @@ class ders extends MainController
 
 
 
-    public function fizik(){
+    public function fizik($param1,$param2){
 
         $array=(new users())->where("id=3")->get();
 
@@ -27,7 +27,7 @@ $ses=(new session)->set(["ad"=>"dılo abinin yeri"]);
         (new users())->where("id=2")->delete();  id 2olanı siler
          */
 
-       $ikinciparam=$this->getUrl[1];  //urlde ki 2. parametreyi alır 
+       $param2;  //urlde ki 2. parametreyi alır değişken ismi önemli değildir.url de kaç parametre varsa o kadar parametre alabilir bu fonskiyon
          
 $deneme=63+12;
         $deger=123466;
