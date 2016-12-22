@@ -63,13 +63,10 @@ protected static  function mainRouter($url,$callback){
 
         if(class_exists($controlname)){
             $b = new $controlname();
+             return call_user_func_array(array($b,$methodname),explode("/",self::$url));
         }
 
-        if(is_callable($b->$methodname())){
-
-            $b->$methodname();
-
-        }
+     
 
 
     }
