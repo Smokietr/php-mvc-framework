@@ -6,6 +6,9 @@
  * Date: 21.12.2016
  * Time: 14:08
  */
+
+include_once "system/config/dbConnect.php";
+
 class getCart
 
 {
