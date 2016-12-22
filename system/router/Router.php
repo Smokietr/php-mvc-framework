@@ -62,8 +62,8 @@ protected static  function mainRouter($url,$callback){
         $methodname = explode("@", $callback)[1];
 
         if(class_exists($controlname)){
-            $b = new $controlname();
-             return call_user_func_array(array($b,$methodname),explode("/",self::$url));
+           // $b = new $controlname();
+             return call_user_func_array(array(new $controlname(),$methodname),explode("/",self::$url));
         }
 
      
