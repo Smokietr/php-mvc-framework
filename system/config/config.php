@@ -10,12 +10,16 @@ class config {
 
 public function settings(){
 
+/*
 
+database connect config settings
+
+*/
 return array(
-      "host"=>"localhost",//database host
-      "dbname"=>"deneme", //database name
-      "user"=>"root", //database user
-      "password"=>"" //database password
+      "host"=>"yourshostname",//database host
+      "dbname"=>"yourdbname", //database name
+      "user"=>"yourdbuser", //database user
+      "password"=>"yourdbpassword" //database password
 
 );
    }
