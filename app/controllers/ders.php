@@ -14,7 +14,7 @@ class ders extends MainController
 
     public function fizik($param1,$param2){
 
-        $array=(new users())->where("id=3")->get();
+        $array=(new users())->where(["id"=>$param2])->get(); //url 2. parametresine göre select işlemi yapacak
 
 
 $ses=(new session)->set(["ad"=>"dılo abinin yeri"]);
