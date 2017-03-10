@@ -5,12 +5,15 @@
  * Date: 26.9.2016
  * Time: 18:15
  */
-include_once "system/engine/engine.php";
+
+use duncan3dc\Laravel\BladeInstance;
+
+
 class MainController
 {
     protected  $getUrl;
     public function __construct(){
-        $this->getUrl=Router::$dynUrl;
+        
         if(!function_exists('view')) {
             function view($param,$vars=false)
             {
