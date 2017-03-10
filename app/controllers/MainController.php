@@ -6,7 +6,7 @@
  * Time: 18:15
  */
 
-use duncan3dc\Laravel\BladeInstance;
+
 
 
 class MainController
