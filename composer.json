@@ -2,7 +2,7 @@
     "name": "zeus/mvc",
     "description": "mvc framework",
     "require": {
-        "duncan3dc/blade": "^3.4"
+       
     },
     "autoload":{
 
