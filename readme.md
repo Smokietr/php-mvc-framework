@@ -1,5 +1,5 @@
 >**php mvc framework** 
->consoleden **"composer update"** komutu vererek kurulumu yapabilirsniz
+
 >"`dılo abinin yeri `" youtube kanalı tarafından yazılmıştır
 >model view controller php mini framework v 1.0
 >
